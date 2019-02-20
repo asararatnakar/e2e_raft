@@ -204,7 +204,6 @@ Capabilities:
 #
 ################################################################################
 Application: &ApplicationDefaults
-
     # Organizations is the list of orgs which are defined as participants on
     # the application side of the network
     Organizations:
@@ -376,24 +375,10 @@ Profiles:
                     - *Org2
                     - *Org3
     TwoOrgsChannel:
+        <<: *ChannelDefaults
         Consortium: SampleConsortium
         Orderer:
             <<: *OrdererDefaults
-            # OrdererType: etcdraft
-            # EtcdRaft:
-            #   Consenters:
-            #     - Host: orderer0.example.com
-            #       Port: 7050
-            #       ClientTLSCert: ./crypto-config/ordererOrganizations/example.com/orderers/orderer0.example.com/tls/server.crt
-            #       ServerTLSCert: ./crypto-config/ordererOrganizations/example.com/orderers/orderer0.example.com/tls/server.crt
-            #     - Host: orderer1.example.com
-            #       Port: 7050
-            #       ClientTLSCert: ./crypto-config/ordererOrganizations/example.com/orderers/orderer1.example.com/tls/server.crt
-            #       ServerTLSCert: ./crypto-config/ordererOrganizations/example.com/orderers/orderer1.example.com/tls/server.crt
-            #     - Host: orderer2.example.com
-            #       Port: 7050
-            #       ClientTLSCert: ./crypto-config/ordererOrganizations/example.com/orderers/orderer2.example.com/tls/server.crt
-            #       ServerTLSCert: ./crypto-config/ordererOrganizations/example.com/orderers/orderer2.example.com/tls/server.crt
         Application:
             <<: *ApplicationDefaults
             Organizations:
