@@ -284,12 +284,11 @@ Orderer: &OrdererDefaults
               ClientTLSCert: ./crypto-config/ordererOrganizations/example.com/orderers/orderer2.example.com/tls/server.crt
               ServerTLSCert: ./crypto-config/ordererOrganizations/example.com/orderers/orderer2.example.com/tls/server.crt
         Options:
-          TickInterval: 500
+          TickInterval: 500ms
           ElectionTick: 10
           HeartbeatTick: 1
-          MaxInflightMsgs: 256
-          MaxSizePerMsg: 1048576
-          SnapshotInterval: 500
+          MaxInflightBlocks: 5
+          SnapshotIntervalSize: 20 MB
     # Organizations is the list of orgs which are defined as participants on
     # the orderer side of the network
     Organizations:
